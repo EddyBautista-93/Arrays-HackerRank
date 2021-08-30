@@ -61,31 +61,21 @@ namespace arrays
 
         public static int hourglassSum(List<List<int>> arr)
         {
-        List<int> sums = new List<int>();
-        for(int i = 1; i < 5; i++)
-        {
-            for(int j = 1; j < 5; j++)
+            int retVal = int.MinValue;
+            int highest = 0;
+            for (int i = 0; i < arr.Count - 2; i++)
             {
-                int leftTopCorner = arr[i-1][j-1];
-                int topMiddle = arr[i-1][j];
-                int rightTopCorner = arr[i-1][j+1];
-                int middle = arr[i][j];
-                int leftBottomCorner = arr[i+1][j-1];
-                int bottomMiddle = arr[i+1][j];
-                int rightBottomCorner = arr[i+1][j+1];
-                int sum = leftTopCorner + topMiddle + rightBottomCorner
-                                     + middle +
-                       leftBottomCorner + bottomMiddle + rightBottomCorner;
-                sums.Add(sum);
+                for (int j = 0; j < arr.Count - 2; j++)
+                {
+                    highest = arr[i][j] + arr[i][j + 1] + arr[i][j + 2] + arr[i + 1][j + 1] + arr[i + 2][j] + arr[i + 2][j + 1] + arr[i + 2][j + 2];
+                    if (highest > retVal)
+                    {
+                        retVal = highest;
+                    }
+                }
             }
-        }
-        foreach (var c in sums)
-        {
-            Console.WriteLine(c);
-            
-        }
-        
-        return sums.Max();
+
+            return retVal;
         }
 
 
