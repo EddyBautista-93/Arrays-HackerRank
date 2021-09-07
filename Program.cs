@@ -111,11 +111,27 @@ namespace arrays
 
         public static List<int> rotLeft(List<int> a, int d)
         {
-            
+            List<int> retList = new List<int>();
+            int index = d;
+            int len = a.Count;
+            int place = 0;
 
+            for (var i = 0; i < len; i++)
+            {
+
+                if (index >= d && index >= len)
+                {
+                    retList.Add(a[place]);
+                    ++place;
+                }
+                else if (index >= d)
+                {
+                    retList.Add(a[index]);
+                    ++index;
+                }
+            }
+            return retList;
         }
-
-
 
 
         static void Main(string[] args)
@@ -129,18 +145,27 @@ namespace arrays
             // testLest.Add(new List<int>{0, 0, 0, 2, 0, 0});
             // testLest.Add(new List<int>{0, 0, 1, 2, 4, 0});
 
-            // test case 2
-            List<List<int>> testLest = new List<List<int>>();
-            testLest.Add(new List<int> { -9, -9, -9, 1, 1, 1 });
-            testLest.Add(new List<int> { 0, -9, 0, 4, 3, 2 });
-            testLest.Add(new List<int> { -9, -9, -9, 1, 2, 3 });
-            testLest.Add(new List<int> { 0, 0, 8, 6, 6, 0 });
-            testLest.Add(new List<int> { 0, 0, 0, -2, 0, 0 });
-            testLest.Add(new List<int> { 0, 0, 1, 2, 4, 0 });
+            // // test case 2
+            // List<List<int>> testLest = new List<List<int>>();
+            // testLest.Add(new List<int> { -9, -9, -9, 1, 1, 1 });
+            // testLest.Add(new List<int> { 0, -9, 0, 4, 3, 2 });
+            // testLest.Add(new List<int> { -9, -9, -9, 1, 2, 3 });
+            // testLest.Add(new List<int> { 0, 0, 8, 6, 6, 0 });
+            // testLest.Add(new List<int> { 0, 0, 0, -2, 0, 0 });
+            // testLest.Add(new List<int> { 0, 0, 1, 2, 4, 0 });
 
-            hourglassSum(testLest);
+            // hourglassSum(testLest);
 
 
+            // ============================
+            List<int> testList = new List<int>();
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(4);
+            testList.Add(5);
+
+            rotLeft(testList, 2);
 
         }
     }

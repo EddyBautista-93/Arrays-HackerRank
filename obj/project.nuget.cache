@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8w3umjwRh69LqUzQ8YE7AJs3aCuPRMQtPKNLQjj7Ckyor2lQH4Q+sWEbX8LuRiFfMswfhMOq1p0QwGGN7qefvQ==",
+  "dgSpecHash": "q4GNM/7YNnPcO4GMMhr832NTdWBVopH/hNUW8yMWHnkwfehxDDFhZLfAxLD3So4l2+U2xsekhST6LMBcduZG8Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\bauti\\source\\interview-prep\\hackerank\\arrays\\arrays.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\bauti\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.5\\microsoft.netcore.app.host.win-x64.5.0.5.nupkg.sha512"
+  ],
   "logs": []
 }
