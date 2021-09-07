@@ -78,6 +78,44 @@ namespace arrays
             return retVal;
         }
 
+        // Arrays: Left Rotation
+        // A left rotation operation on an array shifts each of the array's elements  unit to the left. For example, if  left rotations are performed on array , then the array would become . Note that the lowest index item moves to the highest index in a rotation. This is called a circular array.
+
+        // Given an array  of  integers and a number, , perform  left rotations on the array. Return the updated array to be printed as a single line of space-separated integers.
+
+        // Function Description
+
+        // Complete the function rotLeft in the editor below.
+
+        // rotLeft has the following parameter(s):
+
+        // int a[n]: the array to rotate
+        // int d: the number of rotations
+        // Returns
+
+        // int a'[n]: the rotated array
+        // Input Format
+
+        // The first line contains two space-separated integers  and , the size of  and the number of left rotations.
+        // The second line contains  space-separated integers, each an .
+
+        // Constraints
+
+        // Sample Input
+
+        // 5 4
+        // 1 2 3 4 5
+        // Sample Output
+
+        // 5 1 2 3 4
+
+        public static List<int> rotLeft(List<int> a, int d)
+        {
+            
+
+        }
+
+
 
 
         static void Main(string[] args)
@@ -93,14 +131,16 @@ namespace arrays
 
             // test case 2
             List<List<int>> testLest = new List<List<int>>();
-            testLest.Add(new List<int>{-9, -9, -9, 1, 1, 1});
-            testLest.Add(new List<int>{0, -9, 0, 4, 3, 2});
-            testLest.Add(new List<int>{-9, -9, -9, 1, 2, 3});
-            testLest.Add(new List<int>{0, 0, 8, 6, 6, 0});
-            testLest.Add(new List<int>{0, 0, 0, -2, 0, 0});
-            testLest.Add(new List<int>{0, 0, 1, 2, 4, 0});
-            
+            testLest.Add(new List<int> { -9, -9, -9, 1, 1, 1 });
+            testLest.Add(new List<int> { 0, -9, 0, 4, 3, 2 });
+            testLest.Add(new List<int> { -9, -9, -9, 1, 2, 3 });
+            testLest.Add(new List<int> { 0, 0, 8, 6, 6, 0 });
+            testLest.Add(new List<int> { 0, 0, 0, -2, 0, 0 });
+            testLest.Add(new List<int> { 0, 0, 1, 2, 4, 0 });
+
             hourglassSum(testLest);
+
+
 
         }
     }
