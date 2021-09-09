@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections;
-using System.Linq;
 
 namespace arrays
 {
-    class Program
+    internal class Program
     {
         // 1.2D Array
         // Given a  2D Array, :
@@ -25,8 +23,7 @@ namespace arrays
 
         // Example
 
-
-        // -9 -9 -9  1 1 1 
+        // -9 -9 -9  1 1 1
         //  0 -9  0  4 3 2
         // -9 -9 -9  1 2 3
         //  0  0  8  6 6 0
@@ -34,9 +31,9 @@ namespace arrays
         //  0  0  1  2 4 0
         // The  hourglass sums are:
 
-        // -63, -34, -9, 12, 
-        // -10,   0, 28, 23, 
-        // -27, -11, -2, 10, 
+        // -63, -34, -9, 12,
+        // -10,   0, 28, 23,
+        // -27, -11, -2, 10,
         //   9,  17, 25, 18
         // The highest hourglass sum is  from the hourglass beginning at row , column :
 
@@ -118,7 +115,6 @@ namespace arrays
 
             for (var i = 0; i < len; i++)
             {
-
                 if (index >= d && index >= len)
                 {
                     retList.Add(a[place]);
@@ -133,17 +129,14 @@ namespace arrays
             return retList;
         }
 
-
-        //New Years Chaos 
+        //New Years Chaos
         //It is New Year's Day and people are in line for the Wonderland rollercoaster ride. Each person wears a sticker indicating their initial position in the queue from  to . Any person can bribe the person directly in front of them to swap positions, but they still wear their original sticker. One person can bribe at most two others.
 
         // Determine the minimum number of bribes that took place to get to a given queue order. Print the number of bribes, or, if anyone has bribed more than two people, print Too chaotic.
 
         // Example
 
-
         // If person  bribes person , the queue will look like this: . Only  bribe is required. Print 1.
-
 
         // Person  had to bribe  people to get to the current position. Print Too chaotic.
 
@@ -169,8 +162,8 @@ namespace arrays
 
         // Subtasks
 
-        // For  score 
-        // For  score 
+        // For  score
+        // For  score
 
         // Sample Input
 
@@ -188,42 +181,46 @@ namespace arrays
 
         public static void minimumBribes(List<int> q)
         {
+            bool chaotic = false;
+            int length = q.Count;
+            int bribe = 0;
 
+            for (var i = 0; i < length; i++)
+            {
+                if (q[i] - (i + 1) > 2)
+                {
+                    chaotic = true;
+                    break;
+                }
+                for (int j = Math.Max(0, q[i] - 2); j < i; j++)
+                    if (q[j] > q[i])
+                        bribe++;
+            }
+            if (chaotic)
+                Console.WriteLine("Too Chaotic");
+            else
+                Console.WriteLine(bribe);
         }
-        static void Main(string[] args)
+
+        private static void Main(string[] args)
         {
-            // test case 1 passed
-            // List<List<int>> testLest = new List<List<int>>();
-            // testLest.Add(new List<int>{1, 1, 1, 0, 0, 0});
-            // testLest.Add(new List<int>{0, 1, 0, 0, 0, 0});
-            // testLest.Add(new List<int>{1, 1, 1, 0, 0, 0});
-            // testLest.Add(new List<int>{0, 0, 2, 4, 4, 0});
-            // testLest.Add(new List<int>{0, 0, 0, 2, 0, 0});
-            // testLest.Add(new List<int>{0, 0, 1, 2, 4, 0});
 
-            // // test case 2
-            // List<List<int>> testLest = new List<List<int>>();
-            // testLest.Add(new List<int> { -9, -9, -9, 1, 1, 1 });
-            // testLest.Add(new List<int> { 0, -9, 0, 4, 3, 2 });
-            // testLest.Add(new List<int> { -9, -9, -9, 1, 2, 3 });
-            // testLest.Add(new List<int> { 0, 0, 8, 6, 6, 0 });
-            // testLest.Add(new List<int> { 0, 0, 0, -2, 0, 0 });
-            // testLest.Add(new List<int> { 0, 0, 1, 2, 4, 0 });
+            List<int> testList = new List<int>();
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
+            testList.Add(5);
+            testList.Add(4);
 
-            // hourglassSum(testLest);
+            minimumBribes(testList);
 
+            List<int> testList1 = new List<int>();
+            testList.Add(4);
+            testList.Add(1);
+            testList.Add(2);
+            testList.Add(3);
 
-            // ============================
-
-            // List<int> testList = new List<int>();
-            // testList.Add(1);
-            // testList.Add(2);
-            // testList.Add(3);
-            // testList.Add(4);
-            // testList.Add(5);
-
-            // rotLeft(testList, 2);
-
+            minimumBribes(testList1);
         }
     }
 }
