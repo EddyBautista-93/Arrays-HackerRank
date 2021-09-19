@@ -13,4 +13,4 @@ C:\Users\bauti\source\interview-prep\hackerank\arrays\obj\Debug\net5.0\arrays.dl
 C:\Users\bauti\source\interview-prep\hackerank\arrays\obj\Debug\net5.0\ref\arrays.dll
 C:\Users\bauti\source\interview-prep\hackerank\arrays\obj\Debug\net5.0\arrays.pdb
 C:\Users\bauti\source\interview-prep\hackerank\arrays\obj\Debug\net5.0\arrays.genruntimeconfig.cache
-C:\Users\bauti\source\interview-prep\hackerank\arrays\obj\Debug\net5.0\arrays.csproj.AssemblyReference.cache
+C:\Users\bauti\source\interview-prep\hackerank\arrays\obj\Debug\net5.0\arrays.csprojAssemblyReference.cache

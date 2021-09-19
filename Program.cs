@@ -210,34 +210,85 @@ namespace arrays
 
         static int minimumSwaps(int[] arr)
         {
+            int count = 0;
+            int i = 0;
+            while (i < arr.Length)
+            {
 
-            return 0;
+                // If current element is
+                // not at the right position
+                if (arr[i] != i + 1)
+                {
 
+                    while (arr[i] != i + 1)
+                    {
+                        int temp = 0;
+
+                        // Swap current element
+                        // with correct position
+                        // of that element
+                        temp = arr[arr[i] - 1];
+                        arr[arr[i] - 1] = arr[i];
+                        arr[i] = temp;
+                        count++;
+                    }
+                }
+
+                // Increment for next index
+                // when current element is at
+                // correct position
+                i++;
+            }
+            return count;
         }
 
 
+        // Array Manipulation 
+        //Starting with a 1-indexed array of zeros and a list of operations, for each operation add a value to each the array element between two given indices, inclusive. Once all operations have been performed, return the maximum value in the array.
+
+        // Example
 
 
+        // Queries are interpreted as follows:
+
+        //     a b k
+        //     1 5 3
+        //     4 8 7
+        //     6 9 1
+        // Add the values of  between the indices  and  inclusive:
+
+        // index->	 1 2 3  4  5 6 7 8 9 10
+        // 	[0,0,0, 0, 0,0,0,0,0, 0]
+        // 	[3,3,3, 3, 3,0,0,0,0, 0]
+        // 	[3,3,3,10,10,7,7,7,0, 0]
+        // 	[3,3,3,10,10,8,8,8,1, 0]
+        // The largest value is  after all operations are performed.
+
+        // Function Description
+
+        // Complete the function arrayManipulation in the editor below.
+
+        // arrayManipulation has the following parameters:
+
+        // int n - the number of elements in the array
+        // int queries[q][3] - a two dimensional array of queries where each queries[i] contains three integers, a, b, and k.
+        // Returns
+
+        // int - the maximum value in the resultant array
+
+        public static long arrayManipulation(int n, List<List<int>> queries)
+        {
+
+            
+        }
 
         private static void Main(string[] args)
         {
 
-            List<int> testList = new List<int>();
-            testList.Add(1);
-            testList.Add(2);
-            testList.Add(3);
-            testList.Add(5);
-            testList.Add(4);
+            int[] arr = { 2, 3, 4, 1, 5 };
 
-            minimumBribes(testList);
-
-            List<int> testList1 = new List<int>();
-            testList.Add(4);
-            testList.Add(1);
-            testList.Add(2);
-            testList.Add(3);
-
-            minimumBribes(testList1);
+            // Function to find minimum swaps
+            Console.WriteLine(minimumSwaps(arr));
         }
     }
 }
